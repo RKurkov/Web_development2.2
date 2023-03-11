@@ -51,18 +51,19 @@ console.log(`randomNumber(-10, 10) -> ${randomNumber(-10, 10)}`);
 
 //Задача №5 Значения из массива
 
-let arr1 = [[1,2,3,4], 2];
-let arr2 = [[1,2,3,4], 3];
+let arr1 = [1,2,3,4];
+let num1 = 2;
+let arr2 = [1,2,3,4];
+let num2 = 3;
 
-function newArr(arr) {
+function newArr(arr, num) {
     let resArr = []
-    let workArr = arr[0];
-    for (let i = 0; i < arr[1]; i++) {
+    for (let i = 0; i < num; i++) {
         //resArr.push(randomNumber(workArr[0], workArr[workArr.length - 1]));
-        resArr.push(randomNumber(workArr[0], workArr.at(-1)));
+        resArr.push(arr[randomNumber(0, arr.length - 1)]);
     }
     return resArr;
 }
 
-console.log(`sampleArray([${arr1[0]}], ${arr1[1]}) -> [${newArr(arr1)}]`);
-console.log(`sampleArray([${arr2[0]}], ${arr2[1]}) -> [${newArr(arr2)}]`);
+console.log(`sampleArray([${arr1}], ${num1}) -> [${newArr(arr1, num1)}]`);
+console.log(`sampleArray([${arr2}], ${num2}) -> [${newArr(arr2, num2)}]`);
